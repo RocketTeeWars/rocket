@@ -1,0 +1,19 @@
+{
+  "name": "rocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RocketTeeWars/rocket.git"
+  },
+  "author": "TeamRocket",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RocketTeeWars/rocket/issues"
+  },
+  "homepage": "https://github.com/RocketTeeWars/rocket#readme"
+}
