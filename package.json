@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RocketTeeWars/rocket/issues"
   },
-  "homepage": "https://github.com/RocketTeeWars/rocket#readme"
+  "homepage": "https://github.com/RocketTeeWars/rocket#readme",
+  "dependencies": {
+    "dream-cheeky-driver": "2.2.1"
+  }
 }
