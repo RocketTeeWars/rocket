@@ -5,6 +5,6 @@
   "author": "TeamRocket",
   "license": "MIT",
   "dependencies": {
-    "dream-cheeky-driver": "2.2.1"
+    "node-hid": "*"
   }
 }
