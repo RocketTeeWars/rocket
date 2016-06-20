@@ -1,24 +1,95 @@
-// Ionic Starter App
+angular.module("app", [])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
+.service("socket", function() {
+  //var socket = io("http://172.18.150.182");
+  var socket = io("http://192.168.4.1");
+  return {
+    emit: function(name) {
+      console.log("Sending event " + name);
+      socket.emit(name);
     }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+  };
 })
+
+.controller("appController", function($scope, socket) {
+
+  $scope.fire = function() {
+    socket.emit("fire");
+  };
+
+  $scope.left = function(){
+    socket.emit("left");
+  };
+
+  $scope.right = function(){
+    socket.emit("right");
+  };
+
+  $scope.down = function(){
+    socket.emit("down");
+  };
+
+  $scope.up = function(){
+    socket.emit("up");
+  };
+
+  $scope.stop = function(){
+    socket.emit("stop");
+  };
+
+})
+
+.directive("ngTouchstart", function () {
+    return {
+        controller: ["$scope", "$element", function ($scope, $element) {
+
+            $element.bind("touchstart", onTouchStart);
+            function onTouchStart(event) {
+                var method = $element.attr("ng-touchstart");
+                $scope.$event = event;
+                $scope.$apply(method);
+            }
+
+        }]
+    }
+})
+
+.directive("ngTouchmove", function () {
+    return {
+        controller: ["$scope", "$element", function ($scope, $element) {
+
+            $element.bind("touchstart", onTouchStart);
+            function onTouchStart(event) {
+                event.preventDefault();
+                $element.bind("touchmove", onTouchMove);
+                $element.bind("touchend", onTouchEnd);
+            }
+            function onTouchMove(event) {
+                var method = $element.attr("ng-touchmove");
+                $scope.$event = event;
+                $scope.$apply(method);
+            }
+            function onTouchEnd(event) {
+                event.preventDefault();
+                $element.unbind("touchmove", onTouchMove);
+                $element.unbind("touchend", onTouchEnd);
+            }
+
+        }]
+    }
+})
+
+.directive("ngTouchend", function () {
+    return {
+        controller: ["$scope", "$element", function ($scope, $element) {
+
+            $element.bind("touchend", onTouchEnd);
+            function onTouchEnd(event) {
+                var method = $element.attr("ng-touchend");
+                $scope.$event = event;
+                $scope.$apply(method);
+            }
+
+        }]
+    }
+});

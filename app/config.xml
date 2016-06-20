@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.app748604" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>app</name>
+<widget id="com.ionicframework.testprojekt898824" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>testprojekt</name>
   <description>
-        Steuerung Rocket Launcher
+        An Ionic Framework and Cordova project.
     </description>
-  <author email="rocket@teewars.org" href="http://example.com.com/">
-      Team Rocket
+  <author email="you@example.com" href="http://example.com.com/">
+      Your Name Here
     </author>
   <content src="index.html"/>
   <access origin="*"/>
