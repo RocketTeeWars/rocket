@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: padding-box;
+  background-color: Gainsboro;
 }
 
 .firebutton
@@ -14,19 +15,44 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   width: 33.3333% !important;
+  height: 50%;
 }
 
 .controls {
   float: left;
   width: 22.2222%;
   height: 100%;
+  padding-top: 2%;
 }
 
 .control:not(.controls) {
-  height: 50%;
+  height: 68%;
 }
 
 .control {
-  padding: 5px;
-  background-color: grey;
+  background-color: Gainsboro;
+}
+
+#right{
+  background-image: url(../images/pfeil_right.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+#up{
+  background-image: url(../images/pfeil_up.png);
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#down{
+  background-image: url(../images/pfeil_down.png);
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#left{
+  background-image: url(../images/pfeil_left.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
