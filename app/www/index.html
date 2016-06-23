@@ -27,12 +27,12 @@
   </head>
 
   <body ng-app="app" ng-controller="appController">
-    <div ng-mousedown="left()" ng-mouseup="stop()" ng-touchstart="left()" ng-touchend="stop()" class="left control controls">Left</div>
+    <div ng-mousedown="left()" ng-mouseup="stop()" ng-touchstart="left()" ng-touchend="stop()" class="left control controls" id="left"></div>
     <div class="controls">
-      <div ng-mousedown="up()"   ng-mouseup="stop()" ng-touchstart="up()"    ng-touchend="stop()" class="up control">Up</div>
-      <div ng-mousedown="down()" ng-mouseup="stop()" ng-touchstart="down()"  ng-touchend="stop()" class="down control">Down</div>
+      <div ng-mousedown="up()"   ng-mouseup="stop()" ng-touchstart="up()"    ng-touchend="stop()" class="up control" id="up"></div>
+      <div ng-mousedown="down()" ng-mouseup="stop()" ng-touchstart="down()"  ng-touchend="stop()" class="down control" id="down"></div>
     </div>
-    <div ng-mousedown="right()" ng-mouseup="stop()" ng-touchstart="right()" ng-touchend="stop()" class="right control controls">Right</div>
+    <div ng-mousedown="right()" ng-mouseup="stop()" ng-touchstart="right()" ng-touchend="stop()" class="right control controls" id="right"></div>
     <div ng-click="fire()" class="firebutton controls" ></div>
   </body>
 </html>
